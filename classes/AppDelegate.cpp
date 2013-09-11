@@ -9,7 +9,7 @@
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "SimpleAudioEngine.h"
+#include "AudioManager.h"
 #include "Config.h"
 #include "HelloWorldScene.h"
 
@@ -41,7 +41,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     pDirector->setContentScaleFactor(1536.0 / CCEGLView::sharedOpenGLView()->getFrameSize().height);
     pDirector->setAnimationInterval(1.0 / 60);
 
-    // create a scene. it's an autorelease object
+    AudioManager::sharedManager()->playBG();
+    
     CCScene *pScene = HelloWorld::scene();
 
     // run

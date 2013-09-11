@@ -54,8 +54,9 @@ AudioManager* AudioManager::sharedManager() {
         bool                        mute;
         
         uDef                    =   CCUserDefault::sharedUserDefault();
-        mute                    =   uDef->getBoolForKey(kHMute, true);
+        mute                    =   uDef->getBoolForKey(kHMute, false);
         staticManager->isMute   =   mute;
+        staticManager->isMute   =   false;
     }
     return staticManager;
 }
