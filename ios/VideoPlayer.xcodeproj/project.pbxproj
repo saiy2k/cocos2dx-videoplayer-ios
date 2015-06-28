@@ -282,8 +282,8 @@
 		EB9B23AB17E0537F00DCE303 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23A817E0537F00DCE303 /* HelloWorldScene.cpp */; };
 		EB9B23B517E06B7B00DCE303 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23AC17E06B7B00DCE303 /* AudioManager.cpp */; };
 		EB9B23B617E06B7B00DCE303 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23AE17E06B7B00DCE303 /* Config.cpp */; };
-		EB9B23B717E06B7B00DCE303 /* iOSWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B217E06B7B00DCE303 /* iOSWrapper.mm */; };
-		EB9B23B817E06B7B00DCE303 /* WrapperClass.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B317E06B7B00DCE303 /* WrapperClass.cpp */; };
+		EB9B23B717E06B7B00DCE303 /* CCVideoPlayeriOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */; };
+		EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */; };
 		EB9B23BC17E06BDB00DCE303 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB9B23BA17E06BDB00DCE303 /* backgroundMusic.mp3 */; };
 		EB9B23BD17E06BDB00DCE303 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB9B23BB17E06BDB00DCE303 /* sampleVideo.mp4 */; };
 		EB9B23BF17E0797C00DCE303 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9B23BE17E0797C00DCE303 /* MediaPlayer.framework */; };
@@ -884,10 +884,10 @@
 		EB9B23AD17E06B7B00DCE303 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
 		EB9B23AE17E06B7B00DCE303 /* Config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Config.cpp; sourceTree = "<group>"; };
 		EB9B23AF17E06B7B00DCE303 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		EB9B23B117E06B7B00DCE303 /* iOSWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iOSWrapper.h; sourceTree = "<group>"; };
-		EB9B23B217E06B7B00DCE303 /* iOSWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iOSWrapper.mm; sourceTree = "<group>"; };
-		EB9B23B317E06B7B00DCE303 /* WrapperClass.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WrapperClass.cpp; sourceTree = "<group>"; };
-		EB9B23B417E06B7B00DCE303 /* WrapperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapperClass.h; sourceTree = "<group>"; };
+		EB9B23B117E06B7B00DCE303 /* CCVideoPlayeriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayeriOS.h; sourceTree = "<group>"; };
+		EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCVideoPlayeriOS.mm; sourceTree = "<group>"; };
+		EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCVideoPlayerWrapper.cpp; sourceTree = "<group>"; };
+		EB9B23B417E06B7B00DCE303 /* CCVideoPlayerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayerWrapper.h; sourceTree = "<group>"; };
 		EB9B23BA17E06BDB00DCE303 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		EB9B23BB17E06BDB00DCE303 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
 		EB9B23BE17E0797C00DCE303 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
@@ -2118,10 +2118,10 @@
 				EB9B23AD17E06B7B00DCE303 /* AudioManager.h */,
 				EB9B23AE17E06B7B00DCE303 /* Config.cpp */,
 				EB9B23AF17E06B7B00DCE303 /* Config.h */,
-				EB9B23B117E06B7B00DCE303 /* iOSWrapper.h */,
-				EB9B23B217E06B7B00DCE303 /* iOSWrapper.mm */,
-				EB9B23B317E06B7B00DCE303 /* WrapperClass.cpp */,
-				EB9B23B417E06B7B00DCE303 /* WrapperClass.h */,
+				EB9B23B117E06B7B00DCE303 /* CCVideoPlayeriOS.h */,
+				EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */,
+				EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */,
+				EB9B23B417E06B7B00DCE303 /* CCVideoPlayerWrapper.h */,
 				EB9B23A617E0537F00DCE303 /* AppDelegate.cpp */,
 				EB9B23A717E0537F00DCE303 /* AppDelegate.h */,
 				EB9B23A817E0537F00DCE303 /* HelloWorldScene.cpp */,
@@ -2467,8 +2467,8 @@
 				EB9B23AB17E0537F00DCE303 /* HelloWorldScene.cpp in Sources */,
 				EB9B23B517E06B7B00DCE303 /* AudioManager.cpp in Sources */,
 				EB9B23B617E06B7B00DCE303 /* Config.cpp in Sources */,
-				EB9B23B717E06B7B00DCE303 /* iOSWrapper.mm in Sources */,
-				EB9B23B817E06B7B00DCE303 /* WrapperClass.cpp in Sources */,
+				EB9B23B717E06B7B00DCE303 /* CCVideoPlayeriOS.mm in Sources */,
+				EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2556,7 +2556,6 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
-					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"VideoPlayer/libs/Chipmunk/include/chipmunk\"";
@@ -2582,7 +2581,6 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
-					"-websockets",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"VideoPlayer/libs/Chipmunk/include/chipmunk\"";

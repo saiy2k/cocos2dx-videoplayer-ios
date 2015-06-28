@@ -1,10 +1,11 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
-#include "WrapperClass.h"
+#include "CCVideoPlayerWrapper.h"
 #include "Config.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
+using namespace ccvideoplayer;
 
 CCScene* HelloWorld::scene()
 {
@@ -41,5 +42,5 @@ bool HelloWorld::init()
 
 void HelloWorld::menuCallback(CCObject* pSender)
 {
-    WrapperClass::getShared()->playVideo("sampleVideo");
+    CCVideoPlayerWrapper::getSharedInstance()->playVideo("sampleVideo");
 }
