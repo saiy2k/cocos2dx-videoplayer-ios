@@ -12,8 +12,13 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
 #include "cocos2d.h"
+#include "ICCVideoPlayerProtocol.h"
 
-@interface CCVideoPlayeriOS : NSObject 
+typedef ccvideoplayer::ICCVideoPlayerProtocol* ICCVideoPlayerProtocol;
+
+@interface CCVideoPlayeriOS : NSObject
+
+@property (assign) ICCVideoPlayerProtocol delegate;
 
 - (id) init;
 - (void) playVideo:(NSString*)videoPath;

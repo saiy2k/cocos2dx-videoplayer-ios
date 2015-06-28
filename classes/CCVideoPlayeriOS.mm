@@ -14,6 +14,8 @@
     MPMoviePlayerController *player;
 }
 
+@synthesize delegate;
+
 - (id) init
 {
     if (self = [super init])
@@ -78,6 +80,12 @@
         
         // resume playing bg music
         CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+        
+        // call a user's callback when it's finished
+        if(self.delegate)
+        {
+            self.delegate->onVideoFinish();
+        }
     }
 }
 

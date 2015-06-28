@@ -2,8 +2,9 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "ICCVideoPlayerProtocol.h"
 
-class HelloWorld : public cocos2d::CCLayer
+class HelloWorld : public cocos2d::CCLayer, public ccvideoplayer::ICCVideoPlayerProtocol
 {
 public:
     // Method 'init' in cocos2d-x returns bool, instead of 'id' in cocos2d-iphone (an object pointer)
@@ -14,6 +15,9 @@ public:
     
     // a selector callback
     void menuCallback(CCObject* pSender);
+    
+    // callback when video finished playing
+    virtual void onVideoFinish();
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(HelloWorld);

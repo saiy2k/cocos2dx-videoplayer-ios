@@ -10,6 +10,7 @@
 #define __Farmer__CCVideoPlayerWrapper__
 
 #include "cocos2d.h"
+#include "ICCVideoPlayerProtocol.h"
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
 #ifdef __OBJC__
@@ -31,6 +32,9 @@ public:
     
     ~CCVideoPlayerWrapper();
     void playVideo(const char *videoPath);
+    
+    void setDelegate(ICCVideoPlayerProtocol* delegate);
+    ICCVideoPlayerProtocol* getDelegate();
     
     static CCVideoPlayerWrapper *create();
     

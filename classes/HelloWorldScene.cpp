@@ -31,6 +31,9 @@ bool HelloWorld::init()
     
     CCMenuItemFont *vidFont = CCMenuItemFont::create("Click to play Video", this, menu_selector(HelloWorld::menuCallback));
     
+    // set videoplayer callback
+    CCVideoPlayer::sharedInstance()->setDelegate(this);
+    
     CCMenu* pMenu = CCMenu::create(vidFont, NULL);
     //pMenu->setPosition( ccp(c->screenWidth * 0.5, c->screenHeight * 0.5) );
     this->addChild(pMenu, 1);
@@ -41,4 +44,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCallback(CCObject* pSender)
 {
     CCVideoPlayer::sharedInstance()->playVideo("sampleVideo");
+}
+
+void HelloWorld::onVideoFinish()
+{
+    CCLOG("Call a callback when video finished playing.");
 }

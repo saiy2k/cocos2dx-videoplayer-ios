@@ -58,3 +58,15 @@ CCVideoPlayerWrapper *CCVideoPlayerWrapper::create() {
     
     return instance;
 }
+
+void CCVideoPlayerWrapper::setDelegate(ICCVideoPlayerProtocol* delegate)
+{
+    // set deleate to internal player
+    _player.delegate = delegate;
+}
+
+ccvideoplayer::ICCVideoPlayerProtocol* CCVideoPlayerWrapper::getDelegate()
+{
+    // return from internal player
+    return _player.delegate;
+}

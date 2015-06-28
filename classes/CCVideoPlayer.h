@@ -10,23 +10,27 @@
 #define __VideoPlayer__CCVideoPlayer__
 
 #include "CCVideoPlayerWrapper.h"
+#include "ICCVideoPlayerProtocol.h"
 
 namespace ccvideoplayer
 {
 
-class CCVideoPlayer
-{
-public:
-    ~CCVideoPlayer();
-    
-    void playVideo(const char* videoPath);
-    
-    static CCVideoPlayer* sharedInstance();
-    
-private:
-    bool init();
-    ccvideoplayer::CCVideoPlayerWrapper *_internalPlayer;
-};
+    class CCVideoPlayer
+    {
+    public:
+        ~CCVideoPlayer();
+        
+        void playVideo(const char* videoPath);
+        
+        void setDelegate(ICCVideoPlayerProtocol* delegate);
+        ICCVideoPlayerProtocol* getDelegate();
+        
+        static CCVideoPlayer* sharedInstance();
+        
+    private:
+        bool init();
+        ccvideoplayer::CCVideoPlayerWrapper *_internalPlayer;
+    };
     
 }
 

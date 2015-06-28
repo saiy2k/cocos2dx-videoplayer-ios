@@ -293,6 +293,7 @@
 /* Begin PBXFileReference section */
 		1EB0F5C01B401E92001EE1A4 /* CCVideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCVideoPlayer.cpp; sourceTree = "<group>"; };
 		1EB0F5C11B401E92001EE1A4 /* CCVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayer.h; sourceTree = "<group>"; };
+		1EE7FC0E1B40B61500834A57 /* ICCVideoPlayerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICCVideoPlayerProtocol.h; sourceTree = "<group>"; };
 		EB9B1FF517E0519500DCE303 /* VideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B1FF817E0519500DCE303 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB9B1FFA17E0519500DCE303 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -2131,6 +2132,7 @@
 				EB9B23A917E0537F00DCE303 /* HelloWorldScene.h */,
 				1EB0F5C01B401E92001EE1A4 /* CCVideoPlayer.cpp */,
 				1EB0F5C11B401E92001EE1A4 /* CCVideoPlayer.h */,
+				1EE7FC0E1B40B61500834A57 /* ICCVideoPlayerProtocol.h */,
 			);
 			name = classes;
 			path = ../../classes;
