@@ -1,7 +1,6 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "CCVideoPlayer.h"
-#include "Config.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -25,7 +24,6 @@ CCScene* HelloWorld::scene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    Config *c = Config::getConfig();
     if ( !CCLayer::init() )
     {
         return false;
