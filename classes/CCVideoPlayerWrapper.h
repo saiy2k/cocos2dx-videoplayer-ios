@@ -12,20 +12,34 @@
 #include "cocos2d.h"
 
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
-#include "CCVideoPlayeriOS.h"
+#ifdef __OBJC__
+@class CCVideoPlayeriOS;
 #endif
-
-using namespace cocos2d;
+#endif
 
 namespace ccvideoplayer
 {
+    
+#ifdef __OBJC__
+typedef CCVideoPlayeriOS *CCVideoPlayeriOSPtr;
+#else
+typedef void* CCVideoPlayeriOSPtr;
+#endif
 
-class CCVideoPlayerWrapper : public cocos2d::CCObject {
+class CCVideoPlayerWrapper {
 public:
     
-    void playVideo(const char *vidPath);
+    ~CCVideoPlayerWrapper();
+    void playVideo(const char *videoPath);
     
-    static CCVideoPlayerWrapper *getSharedInstance();
+    static CCVideoPlayerWrapper *create();
+    
+private:
+    bool init();
+    
+#if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
+    CCVideoPlayeriOSPtr _player;
+#endif
 };
     
 }

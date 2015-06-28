@@ -9,14 +9,18 @@
 #ifndef __Farmer__CCVideoPlayeriOS__
 #define __Farmer__CCVideoPlayeriOS__
 
+#import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 #include "cocos2d.h"
 
-class CCVideoPlayeriOS : public cocos2d::CCObject {
-public:
-    
-    void playVideo(const char *vidPath);
-    
-    static CCVideoPlayeriOS *getSharedInstance();
-};
+@interface CCVideoPlayeriOS : NSObject 
+
+- (id) init;
+- (void) playVideo:(NSString*)videoPath;
+- (void) removeVideo:(NSNotification *) notification;
+
++ (instancetype) create;
+
+@end
 
 #endif /* defined(__Farmer__iOSWrapper__) */

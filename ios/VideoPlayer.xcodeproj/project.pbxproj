@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1EB0F5C21B401E92001EE1A4 /* CCVideoPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EB0F5C01B401E92001EE1A4 /* CCVideoPlayer.cpp */; };
 		EB9B1FF917E0519500DCE303 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9B1FF817E0519500DCE303 /* QuartzCore.framework */; };
 		EB9B1FFB17E0519500DCE303 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9B1FFA17E0519500DCE303 /* OpenGLES.framework */; };
 		EB9B1FFD17E0519500DCE303 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9B1FFC17E0519500DCE303 /* OpenAL.framework */; };
@@ -283,13 +284,15 @@
 		EB9B23B517E06B7B00DCE303 /* AudioManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23AC17E06B7B00DCE303 /* AudioManager.cpp */; };
 		EB9B23B617E06B7B00DCE303 /* Config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23AE17E06B7B00DCE303 /* Config.cpp */; };
 		EB9B23B717E06B7B00DCE303 /* CCVideoPlayeriOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */; };
-		EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */; };
+		EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.mm */; };
 		EB9B23BC17E06BDB00DCE303 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EB9B23BA17E06BDB00DCE303 /* backgroundMusic.mp3 */; };
 		EB9B23BD17E06BDB00DCE303 /* sampleVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = EB9B23BB17E06BDB00DCE303 /* sampleVideo.mp4 */; };
 		EB9B23BF17E0797C00DCE303 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9B23BE17E0797C00DCE303 /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EB0F5C01B401E92001EE1A4 /* CCVideoPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCVideoPlayer.cpp; sourceTree = "<group>"; };
+		1EB0F5C11B401E92001EE1A4 /* CCVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayer.h; sourceTree = "<group>"; };
 		EB9B1FF517E0519500DCE303 /* VideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9B1FF817E0519500DCE303 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB9B1FFA17E0519500DCE303 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -886,7 +889,7 @@
 		EB9B23AF17E06B7B00DCE303 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		EB9B23B117E06B7B00DCE303 /* CCVideoPlayeriOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayeriOS.h; sourceTree = "<group>"; };
 		EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCVideoPlayeriOS.mm; sourceTree = "<group>"; };
-		EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCVideoPlayerWrapper.cpp; sourceTree = "<group>"; };
+		EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CCVideoPlayerWrapper.mm; sourceTree = "<group>"; };
 		EB9B23B417E06B7B00DCE303 /* CCVideoPlayerWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCVideoPlayerWrapper.h; sourceTree = "<group>"; };
 		EB9B23BA17E06BDB00DCE303 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
 		EB9B23BB17E06BDB00DCE303 /* sampleVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = sampleVideo.mp4; sourceTree = "<group>"; };
@@ -2120,12 +2123,14 @@
 				EB9B23AF17E06B7B00DCE303 /* Config.h */,
 				EB9B23B117E06B7B00DCE303 /* CCVideoPlayeriOS.h */,
 				EB9B23B217E06B7B00DCE303 /* CCVideoPlayeriOS.mm */,
-				EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp */,
+				EB9B23B317E06B7B00DCE303 /* CCVideoPlayerWrapper.mm */,
 				EB9B23B417E06B7B00DCE303 /* CCVideoPlayerWrapper.h */,
 				EB9B23A617E0537F00DCE303 /* AppDelegate.cpp */,
 				EB9B23A717E0537F00DCE303 /* AppDelegate.h */,
 				EB9B23A817E0537F00DCE303 /* HelloWorldScene.cpp */,
 				EB9B23A917E0537F00DCE303 /* HelloWorldScene.h */,
+				1EB0F5C01B401E92001EE1A4 /* CCVideoPlayer.cpp */,
+				1EB0F5C11B401E92001EE1A4 /* CCVideoPlayer.h */,
 			);
 			name = classes;
 			path = ../../classes;
@@ -2322,6 +2327,7 @@
 				EB9B21AE17E0519A00DCE303 /* CCNotificationCenter.cpp in Sources */,
 				EB9B21B117E0519A00DCE303 /* CCPointExtension.cpp in Sources */,
 				EB9B21B417E0519B00DCE303 /* CCProfiling.cpp in Sources */,
+				1EB0F5C21B401E92001EE1A4 /* CCVideoPlayer.cpp in Sources */,
 				EB9B21B717E0519B00DCE303 /* ccUTF8.cpp in Sources */,
 				EB9B21BA17E0519B00DCE303 /* ccUtils.cpp in Sources */,
 				EB9B21BD17E0519B00DCE303 /* CCVertex.cpp in Sources */,
@@ -2468,7 +2474,7 @@
 				EB9B23B517E06B7B00DCE303 /* AudioManager.cpp in Sources */,
 				EB9B23B617E06B7B00DCE303 /* Config.cpp in Sources */,
 				EB9B23B717E06B7B00DCE303 /* CCVideoPlayeriOS.mm in Sources */,
-				EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.cpp in Sources */,
+				EB9B23B817E06B7B00DCE303 /* CCVideoPlayerWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2556,6 +2562,7 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"VideoPlayer/libs/Chipmunk/include/chipmunk\"";
@@ -2581,6 +2588,7 @@
 					"-lxml2",
 					"-lz",
 					"-lsqlite3",
+					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "\"VideoPlayer/libs/Chipmunk/include/chipmunk\"";
