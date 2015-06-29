@@ -47,3 +47,15 @@ CCVideoPlayer* CCVideoPlayer::sharedInstance()
     
     return sharedInstance;
 }
+
+void CCVideoPlayer::setDelegate(ICCVideoPlayerProtocol* delegate)
+{
+    // set deleate to internal player
+    _internalPlayer->setDelegate(delegate);
+}
+
+ICCVideoPlayerProtocol* CCVideoPlayer::getDelegate()
+{
+    // return from internal player
+    return _internalPlayer->getDelegate();
+}

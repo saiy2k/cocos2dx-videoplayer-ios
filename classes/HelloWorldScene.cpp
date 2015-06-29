@@ -1,7 +1,6 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 #include "CCVideoPlayer.h"
-#include "Config.h"
 
 using namespace cocos2d;
 using namespace CocosDenshion;
@@ -25,13 +24,15 @@ CCScene* HelloWorld::scene()
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    Config *c = Config::getConfig();
     if ( !CCLayer::init() )
     {
         return false;
     }
     
     CCMenuItemFont *vidFont = CCMenuItemFont::create("Click to play Video", this, menu_selector(HelloWorld::menuCallback));
+    
+    // set videoplayer callback
+    CCVideoPlayer::sharedInstance()->setDelegate(this);
     
     CCMenu* pMenu = CCMenu::create(vidFont, NULL);
     //pMenu->setPosition( ccp(c->screenWidth * 0.5, c->screenHeight * 0.5) );
@@ -43,4 +44,9 @@ bool HelloWorld::init()
 void HelloWorld::menuCallback(CCObject* pSender)
 {
     CCVideoPlayer::sharedInstance()->playVideo("sampleVideo");
+}
+
+void HelloWorld::onVideoFinish()
+{
+    CCLOG("Call a callback when video finished playing.");
 }

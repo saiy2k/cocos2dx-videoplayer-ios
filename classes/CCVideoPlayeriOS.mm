@@ -7,19 +7,20 @@
 //
 
 #import "CCVideoPlayeriOS.h"
-#include "AudioManager.h"
 #include "EAGLView.h"
-#include "Config.h"
+#include "SimpleAudioEngine.h"
 
 @implementation CCVideoPlayeriOS {
     MPMoviePlayerController *player;
 }
 
+@synthesize delegate;
+
 - (id) init
 {
     if (self = [super init])
     {
-        NSLog(@"Init CCVideoPlayeriOS");
+        CCLOG("init CCVieoPlayeriOS");
     }
     
     return self;
@@ -55,11 +56,9 @@
 
 - (void) removeVideo:(NSNotification *) notification
 {
-    //NSLog(@"playback %d", player.playbackState);
-    
     if (player.playbackState == MPMoviePlaybackStatePaused || player.playbackState == MPMoviePlaybackStateStopped) {
         
-        NSLog(@"Remove Video");
+        CCLOG("Removed video");
         
         // remove player from superview
         [player.view removeFromSuperview];
@@ -79,7 +78,14 @@
             cocos2d::CCDirector::sharedDirector()->resume();
         }
         
-        AudioManager::sharedManager()->playBG();
+        // resume playing bg music
+        CocosDenshion::SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
+        
+        // call a user's callback when it's finished
+        if(self.delegate)
+        {
+            self.delegate->onVideoFinish();
+        }
     }
 }
 

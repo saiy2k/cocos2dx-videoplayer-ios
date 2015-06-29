@@ -23,12 +23,3 @@ A bridge class interfacing low level class with C++ class (which will be only us
 
 3. **CCVideoPlayer.h** and **CCVideoPlayer.cpp**
 Pure C++ class that will be using by users while coding game
-
-### Branches (Development) ###
-
-There're 2 branches
-1. master
-Still involving using AudioManager, and Config classes as found in the original work.
-
-2. custom
-Remove usage of AudioManager, and Config class from core classes making playing video.

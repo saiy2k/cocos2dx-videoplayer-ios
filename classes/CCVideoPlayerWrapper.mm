@@ -8,9 +8,10 @@
 
 #include "CCVideoPlayerWrapper.h"
 #include "CCVideoPlayeriOS.h"
-#include "AudioManager.h"
+#include "SimpleAudioEngine.h"
 
 using namespace ccvideoplayer;
+using namespace CocosDenshion;
 
 CCVideoPlayerWrapper::~CCVideoPlayerWrapper()
 {
@@ -30,8 +31,8 @@ bool CCVideoPlayerWrapper::init()
 }
 
 void CCVideoPlayerWrapper::playVideo(const char *videoPath) {
-    // stop bg music first before playing video
-    AudioManager::sharedManager()->stopBG();
+    // pause bg music
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
     
 #if CC_TARGET_PLATFORM == CC_PLATFORM_IOS
     [_player playVideo:[NSString stringWithUTF8String:videoPath]];
@@ -56,4 +57,16 @@ CCVideoPlayerWrapper *CCVideoPlayerWrapper::create() {
     }
     
     return instance;
+}
+
+void CCVideoPlayerWrapper::setDelegate(ICCVideoPlayerProtocol* delegate)
+{
+    // set deleate to internal player
+    _player.delegate = delegate;
+}
+
+ccvideoplayer::ICCVideoPlayerProtocol* CCVideoPlayerWrapper::getDelegate()
+{
+    // return from internal player
+    return _player.delegate;
 }
