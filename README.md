@@ -23,3 +23,18 @@ A bridge class interfacing low level class with C++ class (which will be only us
 
 3. **CCVideoPlayer.h** and **CCVideoPlayer.cpp**
 Pure C++ class that will be using by users while coding game
+
+### Usage ###
+1. Copy **CCVideoPlayeriOS (.h, and .mm)**, **CCVideoPlayerWrapper (.h and .mm)**, **CCVideoPlayer (.h and .cpp)**, and **ICCVideoPlayerProtocol.h** to your project.
+2. Whenever you want to play video, add this following code at the top.
+`#include "CCVideoPlayer.h"`
+
+3. Play video with this code.
+`CCVideoPlayer::sharedInstance()->playVideo("videos/vidfile");`
+
+### Note ###
+It only detects .mp4 file extension.
+
+Whenever call `playVideo()`, its video screen will be put on top of the current view and the video automatically plays. It won't have any playback control buttons over the video screen. The video will be scaled with respect to aspect ratio against the screen's resolution.
+
+Whenever the video finishes playing, it will automatically remove out its view and go back to the previous view. You can add custom code up on its completion by implement **ICCVideoPlayerProtocol.h** in your class via `onVideoFinish()` method.
