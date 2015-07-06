@@ -1,6 +1,8 @@
 cocos2dx-videoplayer-ios
 ===
 
+[![Build Status](https://travis-ci.org/haxpor/cocos2dx-videoplayer-ios.svg?branch=master)](https://travis-ci.org/haxpor/cocos2dx-videoplayer-ios)
+
 ### Brief ###
 
 
