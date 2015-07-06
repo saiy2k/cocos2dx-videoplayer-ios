@@ -2175,6 +2175,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0460;
+				TargetAttributes = {
+					EB9B1FF417E0519500DCE303 = {
+						DevelopmentTeam = XGKHW634KL;
+					};
+				};
 			};
 			buildConfigurationList = EB9B1FF017E0519500DCE303 /* Build configuration list for PBXProject "VideoPlayer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2549,6 +2554,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -2576,6 +2582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = VideoPlayer/Prefix.pch;
