@@ -100,8 +100,6 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
     CGRect                  originalRect_;
     NSNotification*         keyboardShowNotification_;
     BOOL                    isKeyboardShown_;
-    
-    MPMoviePlayerController *player;
 }
 
 @property(nonatomic, readonly) UITextPosition *beginningOfDocument;
@@ -157,9 +155,5 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 -(void) doAnimationWhenKeyboardMoveWithDuration:(float) duration distance:(float) dis;
 -(void) doAnimationWhenAnotherEditBeClicked;
-
-- (void) playTutorialVideo:(NSString *)path;
-
-- (void) removeVideo;
 
 @end

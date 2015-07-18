@@ -400,29 +400,6 @@ static EAGLView *view = 0;
         return;
     }
     
-    if (player) {
-        
-        NSLog(@"stoping player");
-        
-        [player                     stop];
-        [player.view                removeFromSuperview];
-        [player                     release];
-        player                  =   nil;
-        
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:MPMoviePlayerPlaybackStateDidChangeNotification
-                                                      object:nil];
-        
-        if (cocos2d::CCDirector::sharedDirector()->isPaused()) {
-            cocos2d::CCDirector::sharedDirector()->resume();
-        }
-        
-        AudioManager::sharedManager()->unMute();
-        AudioManager::sharedManager()->playBG();
-        
-        return;
-    }
-    
     int ids[IOS_MAX_TOUCHES_COUNT] = {0};
     float xs[IOS_MAX_TOUCHES_COUNT] = {0.0f};
     float ys[IOS_MAX_TOUCHES_COUNT] = {0.0f};
@@ -934,55 +911,6 @@ static EAGLView *view = 0;
     if (self.keyboardShowNotification != nil)
     {
         [[NSNotificationCenter defaultCenter]postNotification:self.keyboardShowNotification];
-    }
-}
-
-- (void) playTutorialVideo:(NSString *)path {
-    
-    NSLog(@"Play Video");
-    
-    NSURL                           *url;
-    
-    url                         =   [NSURL fileURLWithPath:path];
-    player                      =   [[MPMoviePlayerController alloc] initWithContentURL:url]; // LEAK HERE
-    player.view.frame           =   CGRectMake(0, 0, self.frame.size.height, self.frame.size.width);
-    player.fullscreen           =   YES;
-    player.scalingMode          =   MPMovieScalingModeNone;
-    player.controlStyle         =   MPMovieControlStyleNone;
-    [self                           addSubview:player.view];
-    [player                         play];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(removeVideo)
-                                                 name:MPMoviePlayerPlaybackStateDidChangeNotification object:nil];
-    
-    NSLog(@"rect %@", NSStringFromCGRect(self.frame));
-    
-    //soundVolume                 =   [[MPMusicPlayerController applicationMusicPlayer] volume];
-}
-
-- (void) removeVideo {
-    
-    //NSLog(@"playback %d", player.playbackState);
-    
-    if (player.playbackState == MPMoviePlaybackStatePaused || player.playbackState == MPMoviePlaybackStateStopped) {
-        
-        NSLog(@"Remove Video");
-        
-        [player.view                removeFromSuperview];
-        [player                     release];
-        player                  =   nil;
-        
-        [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                        name:MPMoviePlayerPlaybackStateDidChangeNotification
-                                                      object:nil];
-        
-        if (cocos2d::CCDirector::sharedDirector()->isPaused()) {
-            cocos2d::CCDirector::sharedDirector()->resume();
-        }
-        
-        AudioManager::sharedManager()->playBG();
-        
     }
 }
 
